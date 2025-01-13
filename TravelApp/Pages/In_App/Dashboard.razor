@@ -1,0 +1,219 @@
+@page "/in_app/dashboard"
+@inject NavigationManager NavigationManager
+
+<div class="row-layout dashboard-container">
+    <div class="column-layout left-content">
+        <div class="column-layout header">
+            <div class="column-layout group">
+                <h4 class="h4">
+                    Hi, Sarah!
+                </h4>
+                <p class="typography__subtitle-1 text">
+                    We have some great suggestions for your next travel! We've searched the whole web to provide you with these rare findings - special for you!
+                </p>
+            </div>
+        </div>
+        <div class="column-layout bottom-content">
+            <div class="column-layout latest-articles">
+                <div class="row-layout group_1">
+                    <h6 class="h6">
+                        Latest in articles
+                    </h6>
+                    <IgbButton Variant="ButtonVariant.Outlined" DisplayType="ButtonBaseType.Button" @onclick="@(e => Navigate("/in_app/articles"))" class="button" dashboard-scope>
+                        view all ARTICLES
+                        <IgbRipple></IgbRipple>
+                    </IgbButton>
+                </div>
+                <div class="row-layout group_2">
+                    <IgbCard class="card" dashboard-scope>
+                        <IgbCardMedia class="media-content" dashboard-scope>
+                            <img class="image" />
+                        </IgbCardMedia>
+                        <IgbCardHeader>
+                            <h3 slot="title">
+                        </h3>
+                            <h5 slot="subtitle">
+                        </h5>
+                        </IgbCardHeader>
+                        <IgbCardActions class="actions-content" dashboard-scope>
+                            <IgbIconButton slot="start" Variant="IconButtonVariant.Flat">
+                                <span class="material-icons">
+                                    bookmark_border
+                                </span>
+                                <IgbRipple></IgbRipple>
+                            </IgbIconButton>
+                            <IgbIconButton slot="start" Variant="IconButtonVariant.Flat">
+                                <span class="material-icons">
+                                    share
+                                </span>
+                                <IgbRipple></IgbRipple>
+                            </IgbIconButton>
+                            <IgbButton Variant="ButtonVariant.Outlined" DisplayType="ButtonBaseType.Button" slot="end" class="button_1" dashboard-scope>
+                                read
+                                <IgbRipple></IgbRipple>
+                            </IgbButton>
+                        </IgbCardActions>
+                    </IgbCard>
+                </div>
+            </div>
+            <div class="column-layout destinations">
+                <div class="row-layout group_3">
+                    <h6 class="h6">
+                        Destinations
+                    </h6>
+                    <IgbButton Variant="ButtonVariant.Outlined" DisplayType="ButtonBaseType.Button" class="button" dashboard-scope>
+                        VIEW ALL DESTINATIONS
+                        <IgbRipple></IgbRipple>
+                    </IgbButton>
+                </div>
+                <div class="row-layout group_2">
+                    <IgbCard class="card" dashboard-scope>
+                        <IgbCardMedia class="media-content" dashboard-scope>
+                            <img class="image" />
+                        </IgbCardMedia>
+                        <IgbCardHeader>
+                            <h3 slot="title">
+                        </h3>
+                            <h5 slot="subtitle">
+                        </h5>
+                        </IgbCardHeader>
+                        <IgbCardActions class="actions-content" dashboard-scope>
+                            <IgbIconButton slot="start" Variant="IconButtonVariant.Flat">
+                                <span class="material-icons">
+                                    bookmark_border
+                                </span>
+                                <IgbRipple></IgbRipple>
+                            </IgbIconButton>
+                            <IgbIconButton slot="start" Variant="IconButtonVariant.Flat">
+                                <span class="material-icons">
+                                    share
+                                </span>
+                                <IgbRipple></IgbRipple>
+                            </IgbIconButton>
+                            <IgbButton Variant="ButtonVariant.Outlined" DisplayType="ButtonBaseType.Button" slot="end" class="button_1" dashboard-scope>
+                                view
+                                <IgbRipple></IgbRipple>
+                            </IgbButton>
+                        </IgbCardActions>
+                    </IgbCard>
+                </div>
+            </div>
+            <div class="column-layout destinations">
+                <div class="row-layout group_3">
+                    <h6 class="h6">
+                        My travel lists
+                    </h6>
+                    <IgbButton Variant="ButtonVariant.Outlined" DisplayType="ButtonBaseType.Button" class="button" dashboard-scope>
+                        VIEW ALL LISTS
+                        <IgbRipple></IgbRipple>
+                    </IgbButton>
+                </div>
+                <div class="row-layout group_4">
+                    <div class="column-layout group_5">
+                        <p class="typography__subtitle-2 text_1">
+                            USA
+                        </p>
+                        <IgbList class="list" dashboard-scope>
+                            <IgbListItem>
+                                <div slot="title">Grand Canyon</div>
+                                <span slot="end" class="material-icons icon">
+                                    keyboard_arrow_right
+                                </span>
+                            </IgbListItem>
+                            <IgbListItem>
+                                <div slot="title">Las Vegas, NV</div>
+                                <span slot="end" class="material-icons icon">
+                                    keyboard_arrow_right
+                                </span>
+                            </IgbListItem>
+                            <IgbListItem>
+                                <div slot="title">Niagara Falls</div>
+                                <span slot="end" class="material-icons icon">
+                                    keyboard_arrow_right
+                                </span>
+                            </IgbListItem>
+                            <IgbListItem>
+                                <div slot="title">Alaska</div>
+                                <span slot="end" class="material-icons icon">
+                                    keyboard_arrow_right
+                                </span>
+                            </IgbListItem>
+                            <IgbListItem>
+                                <div slot="title">Washington D.C.</div>
+                                <span slot="end" class="material-icons icon">
+                                    keyboard_arrow_right
+                                </span>
+                            </IgbListItem>
+                        </IgbList>
+                    </div>
+                    <div class="column-layout group_5">
+                        <p class="typography__subtitle-2 text_1">
+                            WORLD
+                        </p>
+                        <IgbList class="list" dashboard-scope>
+                            <IgbListItem>
+                                <div slot="title">Rome, Italy</div>
+                                <span slot="end" class="material-icons icon">
+                                    keyboard_arrow_right
+                                </span>
+                            </IgbListItem>
+                            <IgbListItem>
+                                <div slot="title">Paris, France</div>
+                                <span slot="end" class="material-icons icon">
+                                    keyboard_arrow_right
+                                </span>
+                            </IgbListItem>
+                            <IgbListItem>
+                                <div slot="title">London, England</div>
+                                <span slot="end" class="material-icons icon">
+                                    keyboard_arrow_right
+                                </span>
+                            </IgbListItem>
+                            <IgbListItem>
+                                <div slot="title">Germany</div>
+                                <span slot="end" class="material-icons icon">
+                                    keyboard_arrow_right
+                                </span>
+                            </IgbListItem>
+                            <IgbListItem>
+                                <div slot="title">Tokio, Japan</div>
+                                <span slot="end" class="material-icons icon">
+                                    keyboard_arrow_right
+                                </span>
+                            </IgbListItem>
+                        </IgbList>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column-layout photos">
+        <div class="row-layout group_6">
+            <h6 class="h6">
+                Photos
+            </h6>
+            <IgbButton Variant="ButtonVariant.Outlined" DisplayType="ButtonBaseType.Button" class="button" dashboard-scope>
+                GO TO ALBUM
+                <IgbRipple></IgbRipple>
+            </IgbButton>
+        </div>
+        <div class="column-layout group_7">
+            <div class="column-layout group_8">
+                <div class="row-layout group_9">
+                    <div class="row-layout group_10">
+                        <img class="image_1" />
+                        <img class="image_1" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    public void Navigate(string path)
+    {
+        NavigationManager.NavigateTo(path);
+    }
+}

@@ -1,0 +1,102 @@
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<div class="column-layout in-app-container">
+    <div class="row-layout group">
+        <div class="row-layout group_1">
+            <IgbIconButton Variant="IconButtonVariant.Flat" @onclick="@(e => _navDrawer!.ToggleAsync())">
+                <span class="material-icons">
+                    menu
+                </span>
+                <IgbRipple></IgbRipple>
+            </IgbIconButton>
+            <img src="assets/Travel-App-Color-Logo.svg" class="image" />
+        </div>
+        <div class="row-layout group_2">
+            <IgbIconButton Variant="IconButtonVariant.Flat" class="icon-button" in_app-scope>
+                <span class="material-icons icon">
+                    notifications
+                </span>
+                <IgbRipple></IgbRipple>
+            </IgbIconButton>
+            <IgbIconButton Variant="IconButtonVariant.Flat" class="icon-button_1" in_app-scope>
+                <span class="material-icons icon">
+                    search
+                </span>
+                <IgbRipple></IgbRipple>
+            </IgbIconButton>
+            <IgbAvatar Src="assets/Avatar2.png" Shape="AvatarShape.Circle" class="avatar" in_app-scope></IgbAvatar>
+            <p class="typography__body-2 text">
+                Sarah W.
+            </p>
+        </div>
+    </div>
+    <IgbNavDrawer @ref="_navDrawer" class="nav-drawer" in_app-scope>
+        <IgbNavDrawerItem @onclick="@(e => Navigate("/in_app/dashboard"))">
+            <span slot="icon">
+                <span class="material-icons icon_1">
+                    dashboard
+                </span>
+                <IgbRipple></IgbRipple>
+            </span>
+            <div slot="content">Dashboard</div>
+        </IgbNavDrawerItem>
+        <IgbNavDrawerItem @onclick="@(e => Navigate("/in_app/discover"))">
+            <span slot="icon">
+                <span class="material-icons icon_1">
+                    image_search
+                </span>
+                <IgbRipple></IgbRipple>
+            </span>
+            <div slot="content">Discover</div>
+        </IgbNavDrawerItem>
+        <IgbNavDrawerItem @onclick="@(e => Navigate("/in_app/travel_lists"))">
+            <span slot="icon">
+                <span class="material-icons icon_1">
+                    playlist_add_check
+                </span>
+                <IgbRipple></IgbRipple>
+            </span>
+            <div slot="content">Travel lists</div>
+        </IgbNavDrawerItem>
+        <IgbNavDrawerItem @onclick="@(e => Navigate("/in_app/articles"))">
+            <span slot="icon">
+                <span class="material-icons icon_1">
+                    chrome_reader_mode
+                </span>
+                <IgbRipple></IgbRipple>
+            </span>
+            <div slot="content">Articles</div>
+        </IgbNavDrawerItem>
+        <IgbNavDrawerItem @onclick="@(e => Navigate("/in_app/faq"))">
+            <span slot="icon">
+                <span class="material-icons icon_1">
+                    question_answer
+                </span>
+                <IgbRipple></IgbRipple>
+            </span>
+            <div slot="content">FAQ</div>
+        </IgbNavDrawerItem>
+        <IgbNavDrawerItem>
+            <span slot="icon">
+                <span class="material-icons icon_1">
+                    settings
+                </span>
+                <IgbRipple></IgbRipple>
+            </span>
+            <div slot="content">Settings</div>
+        </IgbNavDrawerItem>
+    </IgbNavDrawer>
+    <div class="view-container">
+        @Body
+    </div>
+</div>
+
+@code {
+    private IgbNavDrawer _navDrawer;
+
+    public void Navigate(string path)
+    {
+        NavigationManager.NavigateTo(path);
+    }
+}

@@ -1,0 +1,54 @@
+@page "/"
+@page "/home/login"
+@inject NavigationManager NavigationManager
+
+<div class="row-layout login-container">
+    <div class="row-layout left">
+        <div class="column-layout group">
+            <img src="assets/Travel-App-Color-Logo.svg" class="image" />
+            <div class="column-layout group_1">
+                <h5 class="h5">
+                    Login
+                </h5>
+                <p class="typography__body-2 text">
+                    Please, login so you can access all applications features.
+                </p>
+            </div>
+            <div class="column-layout group_2">
+                <IgbInput DisplayType="InputType.Email" Label="Email address" Placeholder="myname@website.com" Outlined="false" class="input" login-scope></IgbInput>
+                <IgbInput DisplayType="InputType.Password" Label="Password" Placeholder="Min 8 characters" Outlined="false" class="input" login-scope></IgbInput>
+                <div class="row-layout group_3">
+                    <IgbCheckbox LabelPosition="CheckboxBaseLabelPosition.After" @bind-Checked="@_checked" class="checkbox" login-scope>
+                        Remember me
+                    </IgbCheckbox>
+                    <a @onclick="@(e => Navigate("/home/reset_password"))" class="typography__body-2 hyperlink">
+                        Forgot password?
+                    </a>
+                </div>
+            </div>
+            <div class="column-layout group_4">
+                <IgbButton DisplayType="ButtonBaseType.Button" @onclick="@(e => Navigate("/in_app/dashboard"))" class="button" login-scope>
+                    LOGIN
+                    <IgbRipple></IgbRipple>
+                </IgbButton>
+                <div class="row-layout group_5"></div>
+                <IgbButton Variant="ButtonVariant.Outlined" DisplayType="ButtonBaseType.Button" @onclick="@(e => Navigate("/home/sign_up"))" class="button button_1" login-scope>
+                    Don't have a registration? Sign up now!
+                    <IgbRipple></IgbRipple>
+                </IgbButton>
+            </div>
+        </div>
+    </div>
+    <div class="row-layout right">
+        <img src="assets/SignIn.jpg" class="image_1" />
+    </div>
+</div>
+
+@code {
+    private bool _checked = true;
+
+    public void Navigate(string path)
+    {
+        NavigationManager.NavigateTo(path);
+    }
+}

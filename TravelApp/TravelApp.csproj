@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IgniteUI.Blazor" Version="24.2.26" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Shared/Home.razor.css" CssScope="home-scope" />
+    <None Update="Pages/Home/Login.razor.css" CssScope="login-scope" />
+    <None Update="Pages/Home/Sign_up.razor.css" CssScope="sign_up-scope" />
+    <None Update="Pages/Home/Reset_password.razor.css" CssScope="reset_password-scope" />
+    <None Update="Pages/Home/Set_new_password.razor.css" CssScope="set_new_password-scope" />
+    <None Update="Shared/In_App.razor.css" CssScope="in_app-scope" />
+    <None Update="Pages/In_App/Dashboard.razor.css" CssScope="dashboard-scope" />
+    <None Update="Pages/In_App/Discover.razor.css" CssScope="discover-scope" />
+    <None Update="Pages/In_App/Travel_Lists.razor.css" CssScope="travel_lists-scope" />
+    <None Update="Pages/In_App/Articles.razor.css" CssScope="articles-scope" />
+    <None Update="Pages/In_App/FAQ.razor.css" CssScope="faq-scope" />
+  </ItemGroup>
+
+</Project>
